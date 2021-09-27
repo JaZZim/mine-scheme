@@ -1,0 +1,1 @@
+export { SchemeLabel } from './SchemeLabel';
