@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from 'react';
-import { ArcRotateCamera, Mesh, MeshBuilder, StandardMaterial } from '@babylonjs/core';
+import {
+  ArcRotateCamera, Mesh, MeshBuilder, StandardMaterial,
+} from '@babylonjs/core';
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import { useAppSelector } from 'store';
 import { schemeSelector } from 'store/reducers/scheme';

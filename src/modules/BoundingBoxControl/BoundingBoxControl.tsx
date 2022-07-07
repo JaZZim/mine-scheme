@@ -12,13 +12,16 @@ export const BoundingBoxControl: FC = () => {
     dispatch(setShowBoundingBox(!isShowBoundingBox));
   };
 
-  const actionLabel = isShowBoundingBox ? 'Скрыть' : 'Показать';
+  const actionLabel = isShowBoundingBox ? 'Hide' : 'Show';
 
   return (
-    <Button onClick={toggleShowBoundingBox} disabled={status !== SchemeStatus.UPLOADED}>
+    <Button
+      onClick={toggleShowBoundingBox}
+      disabled={status !== SchemeStatus.UPLOADED}
+    >
       {actionLabel}
       {' '}
-      ограничивающую рамку
+      bounding box
     </Button>
   );
 };

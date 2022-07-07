@@ -12,7 +12,7 @@ export const FileUploader: FC = () => {
 
   return (
     <FilePicker
-      label="Загрузить схему шахты"
+      label="Upload scheme"
       extensions={['json']}
       onChangeFile={handleChangeFile}
     />

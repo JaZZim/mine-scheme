@@ -66,7 +66,6 @@ module.exports = {
     'no-use-before-define': 0,
     '@typescript-eslint/no-use-before-define': 1,
     'import/prefer-default-export': 0,
-    'object-curly-newline': [2, { ImportDeclaration: 'never', ExportDeclaration: 'never' }],
     'react/jsx-props-no-spreading': 0,
     'consistent-return': 0,
     'no-shadow': 0,

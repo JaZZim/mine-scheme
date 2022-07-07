@@ -1,5 +1,9 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { Engine, EngineOptions, Nullable, Scene, SceneOptions } from '@babylonjs/core';
+import React, {
+  FC, useEffect, useRef, useState,
+} from 'react';
+import {
+  Engine, EngineOptions, Nullable, Scene, SceneOptions,
+} from '@babylonjs/core';
 import { SceneContext, SceneContextType } from './SceneCtx';
 import { EngineCanvasContext, EngineCanvasContextType } from './EngineCtx';
 

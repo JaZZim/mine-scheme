@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MineScheme, MineSchemeBoundingInfo, Node, MineSchemeInfo } from 'types/mineScheme';
+import {
+  MineScheme,
+  MineSchemeBoundingInfo,
+  Node,
+  MineSchemeInfo,
+} from 'types/mineScheme';
 import { RootState } from 'store/index';
 import { readFile } from 'utils/readFile';
 import { getBoundingInfoOfMine } from './utils';
@@ -8,16 +13,14 @@ import { initialState, SchemeState, SchemeStatus } from './state';
 export const uploadMineScheme = createAsyncThunk(
   'scheme/uploadMineScheme',
   async (file: File) => {
-    try {
-      const fileContent = await readFile(file);
-      if (typeof fileContent === 'string') {
-        // В текущей реализации считаем, что json всегда валиден
-        return JSON.parse(fileContent) as MineScheme;
-      }
-    } catch (err) {
-      throw new Error(err);
+    const fileContent = await readFile(file);
+    if (typeof fileContent === 'string') {
+      // In the current implementation, we believe that json is always valid
+      return JSON.parse(fileContent) as MineScheme;
     }
-    throw new Error('Содержимое файла имеет неверный формат или файл пустой');
+    throw new Error(
+      'File content is not in the correct format or the file is empty',
+    );
   },
 );
 
@@ -31,7 +34,10 @@ export const schemeSlice = createSlice({
     setInfo: (state, action: PayloadAction<MineSchemeInfo | undefined>) => {
       state.info = action.payload;
     },
-    setBoundingInfo: (state, action: PayloadAction<MineSchemeBoundingInfo | undefined>) => {
+    setBoundingInfo: (
+      state,
+      action: PayloadAction<MineSchemeBoundingInfo | undefined>,
+    ) => {
       state.boundingInfo = action.payload;
     },
     setShowBoundingBox: (state, action: PayloadAction<boolean>) => {
